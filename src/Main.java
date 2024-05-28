@@ -4,7 +4,12 @@ import java.util.stream.Collector;
 public class Main {
     public static void main(String[] args) {
 
-        // 1- merge an array into another, then sort
+        // 1- check equality values in two arrays
+        String[] animals = {"dog", "cat"};
+        String[] otherAnimals = {"dog", "cat"};
+        System.out.println("1- check equality values in two arrays : " + Arrays.equals(animals, otherAnimals));
+
+        // 2- merge an array into another, then sort
         int[] nums1 = new int[]{1, 2, 3, 0, 0, 0};
         int[] nums2 = new int[]{2, 5, 6};
         int n = 3;
@@ -15,11 +20,9 @@ public class Main {
         }*/
         System.arraycopy(nums2, 0, nums1, m, n);
         Arrays.sort(nums1);
-        System.out.println("1- merge an array into another, then sort");
-        Arrays.stream(nums1).forEach(x -> System.out.print(x + " "));
-        System.out.println();
+        System.out.println("2- merge an array into another, then sort" + Arrays.toString(nums1));
 
-        // 2- remove elements
+        // 3- remove elements
         int[] nums3 = new int[]{3, 2, 2, 3};
         int val = 3;
         int index = 0;
@@ -29,11 +32,10 @@ public class Main {
                 index++;
             }
         }
-        System.out.println("index= " + index);
-        System.out.println("nums3= " + Arrays.toString(nums3));
+        System.out.println("3- Remove by translating values= " + Arrays.toString(nums3));
 
-        // 3- remove duplicate elements
-        int[] nums4 = new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        // 4- remove duplicate elements
+        int[] nums4 = new int[]{-3, -1, 0, 0, 0, 3, 3};
         int k = 0;
         for (int i = 1; i < nums4.length; i++) {
             if (nums4[i] != nums4[i - 1]) {
@@ -41,9 +43,12 @@ public class Main {
                 k++;
             }
         }
-        System.out.println("k= " + k);
-        System.out.println("nums4= " + Arrays.toString(nums4));
+        System.out.println("4- remove duplicate elements by translating values= " + Arrays.toString(nums4));
 
+        // 5- remove duplicate elements 2
+        int[] nums5 = new int[]{1, 1, 1, 2, 2, 3};
+
+        System.out.println("nums5= " + Arrays.toString(nums5));
 
     }
 }
