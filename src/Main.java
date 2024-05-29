@@ -43,12 +43,43 @@ public class Main {
                 k++;
             }
         }
-        System.out.println("4- remove duplicate elements by translating values= " + Arrays.toString(nums4));
+        System.out.println("4- remove duplicates elements by translating values= " + Arrays.toString(nums4));
 
-        // 5- remove duplicate elements 2
+        // 5- remove duplicate elements over 2 elements
         int[] nums5 = new int[]{1, 1, 1, 2, 2, 3};
+        // 5-1 with a counter map
+        /*Map<Integer, Integer> valueCounter = new HashMap<>();
+        List<Integer> valuesToTranslate = new ArrayList<>();
 
-        System.out.println("nums5= " + Arrays.toString(nums5));
+        for (int num : nums5) {
+            int counter = valueCounter.get(num) == null ? 0 : valueCounter.get(num);
+            valueCounter.put(num, ++counter);
+            if (counter > 2) {
+                valuesToTranslate.add(num);
+            }
+        }
+        for (int i = 0; i < nums5.length; i++) {
+            for (int value : valuesToTranslate) {
+                if(value == nums5[i] && valueCounter.get(value) > 2){
+                    int tmp = nums5[nums5.length -1 -i];
+                    int counter = valueCounter.get(value);
+                    nums5[i] = tmp;
+                    nums5[nums5.length -1 -i] = Integer.MAX_VALUE;
+                    valueCounter.put(value, --counter);
+                }
+            }
+        }
+        Arrays.sort(nums5);*/
+
+        // 5-2 without a counter map
+        int j = 1;
+        for (int i = 1; i < nums5.length; i++) {
+            if (j == 1 || nums5[i] != nums5[j - 2]) {
+                nums5[j++] = nums5[i];
+            }
+        }
+
+        System.out.println("5- remove more than 2 duplicates elements by translating values= " + Arrays.toString(nums5));
 
     }
 }
