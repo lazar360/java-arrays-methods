@@ -32,7 +32,7 @@ public class Main {
         int[] nums3 = new int[]{3, 2, 2, 3};
         int val = 3;
         System.out.println("3- Remove by translating values=");
-        System.out.println("nums3=" + Arrays.toString(nums3) );
+        System.out.println("nums3=" + Arrays.toString(nums3));
         System.out.println("value to remove= " + val);
 
         int index = 0;
@@ -47,12 +47,12 @@ public class Main {
         // 4- remove duplicate elements
         int[] nums4 = new int[]{-3, -1, 0, 0, 0, 3, 3};
         System.out.println("4- Remove duplicate elements");
-        System.out.println("nums4=" + Arrays.toString(nums4) );
-        int k = 0;
+        System.out.println("nums4=" + Arrays.toString(nums4));
+        int k1 = 0;
         for (int i = 1; i < nums4.length; i++) {
             if (nums4[i] != nums4[i - 1]) {
-                nums4[k] = nums4[i];
-                k++;
+                nums4[k1] = nums4[i];
+                k1++;
             }
         }
         System.out.println("result= " + Arrays.toString(nums4));
@@ -70,12 +70,12 @@ public class Main {
         System.out.println("result= " + Arrays.toString(nums5));
 
         // 6- check majority element
-        int[] nums6 = {1,3,1,1,4,1,1,5,1,1,6,2,2};
+        int[] nums6 = {1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6, 2, 2};
         System.out.println("6- check majority element");
         System.out.println("nums6=" + Arrays.toString(nums6));
         Map<Integer, Integer> counterMap = new HashMap<>();
         int majorityElement = -1;
-        if (nums6.length < 3){
+        if (nums6.length < 3) {
             majorityElement = nums6[0];
         } else {
             for (int value : nums6) {
@@ -87,7 +87,17 @@ public class Main {
         System.out.println("result= " + majorityElement);
 
         // 7- Rotate Array
-        System.out.println("Rotate Array");
+        int[] nums7 = {1,2,3,4,5,6,7};
+        int k = 3; //  k = k % nums.length;
+        System.out.println("7- Rotate Array");
+        System.out.println("nums7= " + Arrays.toString(nums7));
+        int[] numsTmp = new int[nums7.length];
+        for (int i = 0; i < nums7.length; i++) {
+            numsTmp[(i+k) % nums7.length] = nums7[i];
+
+        }
+        nums7 = numsTmp;
+        System.out.println("result= " + Arrays.toString(nums7));
 
     }
 }
