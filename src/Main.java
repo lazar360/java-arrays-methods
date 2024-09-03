@@ -99,5 +99,19 @@ public class Main {
         nums7 = numsTmp;
         System.out.println("result= " + Arrays.toString(nums7));
 
+        int[] arrInts = new int[2];
+        System.out.println(arrInts[0]); // print 0
+        double[] arrDoubles = new double[2];
+        System.out.println(arrDoubles[0]); // print 0.0
+        boolean[] arrBooleans = new boolean[2];
+        System.out.println(arrBooleans[0]); // print false
+        char[] arrChars = new char[2];
+        System.out.println(arrChars[0]); // print rien
+        System.out.println(arrChars.length); // print 2
+        Character[] arrCharacters = new Character[2];
+        System.out.println(arrCharacters[0]); // print null
+        System.out.println(arrCharacters.length); // print 2
+
+
     }
 }
